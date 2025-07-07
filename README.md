@@ -4,7 +4,6 @@ Este projeto é o MVP da pós-graduação em Engenharia de Software para Sistema
 
 Trata-se de um **problema de classificação binária**, onde o modelo deve prever se um indivíduo apresenta **alto risco (1)** ou **baixo risco (0)** de burnout, a partir de variáveis numéricas e categóricas.
 
----
 
 ## 🎯 Objetivos Técnicos
 
@@ -14,7 +13,6 @@ Trata-se de um **problema de classificação binária**, onde o modelo deve prev
 - Permitir que o modelo execute previsões com novos dados fornecidos pelo usuário
 - Garantir a qualidade do modelo com testes automatizados via PyTest
 
----
 
 ## 🤖 Algoritmos Utilizados
 
@@ -27,7 +25,6 @@ Durante a fase de modelagem no notebook, foram aplicados e comparados os seguint
 
 O modelo com melhor desempenho (acurácia e generalização) foi escolhido e exportado como `burnout_model.pkl`.
 
----
 
 ## 🧰 Tecnologias e Bibliotecas
 
@@ -39,7 +36,6 @@ O modelo com melhor desempenho (acurácia e generalização) foi escolhido e exp
 - Joblib (para exportação do modelo)
 - Google Colab (ambiente de desenvolvimento do notebook)
 
----
 
 ### 🧪 Testes Automatizados
 - PyTest
@@ -49,7 +45,6 @@ O modelo com melhor desempenho (acurácia e generalização) foi escolhido e exp
 - Flask (backend)
 - HTML5, CSS3, JavaScript (frontend)
 
----
 
 ## 🚀 Como executar o projeto
 
@@ -95,9 +90,8 @@ Formato das predições
 
 Acurácia mínima em dados reais
 
----
 
-### 🧠 Modelo de Machine Learning
+## 🧠 Modelo de Machine Learning
 O modelo foi treinado no Google Colab usando:
 
 Scikit-Learn
@@ -106,9 +100,8 @@ Pré-processamento com normalização
 Comparação de desempenho entre modelos
 Exportação final com joblib
 
----
 
-### 🔍 Exemplos de input
+## 🔍 Exemplos de input
 Exemplo de payload JSON aceito pela API:
 
 {
@@ -133,9 +126,8 @@ Exemplo de payload JSON aceito pela API:
   "StressLevel": 6.0
 }
 
----
 
-### 🛡️ Considerações de Segurança
+## 🛡️ Considerações de Segurança
 Os dados são anônimos e públicos (fonte: Kaggle)
 
 Nenhuma informação sensível é armazenada
