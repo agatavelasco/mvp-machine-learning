@@ -57,8 +57,12 @@ cd mvp-machine-learning/app
 Crie um ambiente virtual e instale os pacotes:
 
 python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
+
+# Linux/macOS
+source venv/bin/activate 
+
+# Windows
+venv\Scripts\activate 
 
 pip install -r ../requirements.txt
 
@@ -73,7 +77,7 @@ O backend será iniciado em:
 ### 4. Abrir o Frontend
 Abra o arquivo index.html diretamente no navegador:
 
-frontend/index.html
+index.html
 
  Insira os dados no formulário e clique em "Prever Risco" para ver o resultado da predição.
 
