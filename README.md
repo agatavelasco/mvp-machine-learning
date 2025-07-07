@@ -39,6 +39,8 @@ O modelo com melhor desempenho (acurácia e generalização) foi escolhido e exp
 - Joblib (para exportação do modelo)
 - Google Colab (ambiente de desenvolvimento do notebook)
 
+---
+
 ### 🧪 Testes Automatizados
 - PyTest
 - Scikit-Learn Metrics (accuracy_score)
@@ -46,9 +48,6 @@ O modelo com melhor desempenho (acurácia e generalização) foi escolhido e exp
 ### 🌐 Aplicação Web
 - Flask (backend)
 - HTML5, CSS3, JavaScript (frontend)
-
----
-
 
 ---
 
@@ -96,6 +95,8 @@ Formato das predições
 
 Acurácia mínima em dados reais
 
+---
+
 ### 🧠 Modelo de Machine Learning
 O modelo foi treinado no Google Colab usando:
 
@@ -104,6 +105,8 @@ Algoritmos: SVM, KNN, Naive Bayes, Árvore de Decisão
 Pré-processamento com normalização
 Comparação de desempenho entre modelos
 Exportação final com joblib
+
+---
 
 ### 🔍 Exemplos de input
 Exemplo de payload JSON aceito pela API:
@@ -129,6 +132,8 @@ Exemplo de payload JSON aceito pela API:
   "SleepHours": 7.0,
   "StressLevel": 6.0
 }
+
+---
 
 ### 🛡️ Considerações de Segurança
 Os dados são anônimos e públicos (fonte: Kaggle)
