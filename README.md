@@ -68,7 +68,7 @@ pip install -r ../requirements.txt
 
 ### 3. Executar o servidor Flask
 
-python server.py
+python main.py
 
 O backend será iniciado em:
 
