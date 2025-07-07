@@ -28,7 +28,7 @@ O modelo com melhor desempenho (acurácia e generalização) foi escolhido e exp
 
 ## 🧰 Tecnologias e Bibliotecas
 
-### 📊 Ciência de Dados e Machine Learning
+### Ciência de Dados e Machine Learning
 - Python 3.x
 - Pandas, NumPy
 - Scikit-Learn
@@ -37,23 +37,23 @@ O modelo com melhor desempenho (acurácia e generalização) foi escolhido e exp
 - Google Colab (ambiente de desenvolvimento do notebook)
 
 
-### 🧪 Testes Automatizados
+### Testes Automatizados
 - PyTest
 - Scikit-Learn Metrics (accuracy_score)
 
-### 🌐 Aplicação Web
+###  Aplicação Web
 - Flask (backend)
 - HTML5, CSS3, JavaScript (frontend)
 
 
-## 🚀 Como executar o projeto
+##  Como executar o projeto
 
-### ✅ 1. Clonar o repositório
+### 1. Clonar o repositório
 
 git clone https://github.com/agatavelasco/mvp-machine-learning.git
 cd mvp-machine-learning/app
 
-### ✅ 2. Instalar dependências
+### 2. Instalar dependências
 Crie um ambiente virtual e instale os pacotes:
 
 python -m venv venv
@@ -62,22 +62,22 @@ venv\Scripts\activate     # Windows
 
 pip install -r ../requirements.txt
 
-### ✅ 3. Executar o servidor Flask
+### 3. Executar o servidor Flask
 
 python server.py
 
 O backend será iniciado em:
 
-📍 http://127.0.0.1:5000/
+ http://127.0.0.1:5000/
 
-### ✅ 4. Abrir o Frontend
+### 4. Abrir o Frontend
 Abra o arquivo index.html diretamente no navegador:
 
 frontend/index.html
 
-📌 Insira os dados no formulário e clique em "Prever Risco" para ver o resultado da predição.
+ Insira os dados no formulário e clique em "Prever Risco" para ver o resultado da predição.
 
-### ✅ 5. Rodar os testes automatizados
+###  5. Rodar os testes automatizados
 No terminal:
 
 python -m pytest test_model.py -v
@@ -125,7 +125,6 @@ Exemplo de payload JSON aceito pela API:
   "SleepHours": 7.0,
   "StressLevel": 6.0
 }
-
 
 ## 🛡️ Considerações de Segurança
 Os dados são anônimos e públicos (fonte: Kaggle)
