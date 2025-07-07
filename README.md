@@ -58,10 +58,10 @@ Crie um ambiente virtual e instale os pacotes:
 
 python -m venv venv
 
-# Linux/macOS
+#### Linux/macOS
 source venv/bin/activate 
 
-# Windows
+#### Windows
 venv\Scripts\activate 
 
 pip install -r ../requirements.txt
