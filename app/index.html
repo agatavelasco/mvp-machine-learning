@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Previsão de Risco de Burnout</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f6fa;
+        margin: 0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1 {
+        color: #2a2a2a;
+        margin-bottom: 20px;
+      }
+
+      form {
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+      }
+
+      label {
+        margin: 10px 0 5px;
+        font-weight: 500;
+      }
+
+      input {
+        width: 96%;
+        max-width: 500px;
+        padding: 8px;
+        margin-bottom: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      button {
+        width: 100%;
+        background: #1976d2;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 12px;
+        margin-top: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #1155a3;
+      }
+
+      #result {
+        margin-top: 24px;
+        font-size: 18px;
+        color: #333;
+        font-weight: bold;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Previsão de Risco de Burnout</h1>
+    <form id="form">
+      <label>Idade:</label>
+      <input name="Age" type="number" min="18" max="70" required />
+
+      <label>Gênero (0 = Feminino, 1 = Masculino, 2 = Outro):</label>
+      <input name="Gender" type="number" min="0" max="2" required />
+
+      <label>Anos na empresa:</label>
+      <input name="YearsAtCompany" type="number" min="0" max="50" required />
+
+      <label>Horas trabalhadas por semana:</label>
+      <input name="WorkHoursPerWeek" type="number" min="0" max="100" required />
+
+      <label>Trabalho remoto (0 = Não, 1 = Híbrido, 2 = Sim):</label>
+      <input name="RemoteWork" type="number" min="0" max="2" required />
+
+      <label>Nível de burnout (0 a 10):</label>
+      <input
+        name="BurnoutLevel"
+        type="number"
+        step="0.1"
+        min="0"
+        max="10"
+        required
+      />
+
+      <label>Tempo de deslocamento (min):</label>
+      <input name="CommuteTime" type="number" min="0" max="180" required />
+
+      <label>Tem suporte em saúde mental? (0 = Não, 1 = Sim):</label>
+      <input
+        name="HasMentalHealthSupport"
+        type="number"
+        min="0"
+        max="1"
+        required
+      />
+
+      <label>Quanto recebe de apoio do gestor (0 a 10):</label>
+      <input
+        name="ManagerSupportScore"
+        type="number"
+        step="0.1"
+        min="0"
+        max="10"
+        required
+      />
+
+      <label>Tem acesso à terapia? (0 = Não, 1 = Sim):</label>
+      <input name="HasTherapyAccess" type="number" min="0" max="1" required />
+
+      <label>Faltas por saúde mental:</label>
+      <input
+        name="MentalHealthDaysOff"
+        type="number"
+        min="0"
+        max="365"
+        required
+      />
+
+      <label>Equilíbrio vida-trabalho (0 a 10):</label>
+      <input
+        name="WorkLifeBalanceScore"
+        type="number"
+        step="0.1"
+        min="0"
+        max="10"
+        required
+      />
+
+      <label>Tamanho da equipe:</label>
+      <input name="TeamSize" type="number" min="1" max="100" required />
+
+      <label>Expectativa de crescimento na carreira (0 a 10):</label>
+      <input
+        name="CareerGrowthScore"
+        type="number"
+        step="0.1"
+        min="0"
+        max="10"
+        required
+      />
+
+      <label>Nível de satisfação no trabalho (0 a 10):</label>
+      <input
+        name="JobSatisfaction"
+        type="number"
+        step="0.1"
+        min="0"
+        max="10"
+        required
+      />
+
+      <label>Horas de atividade física por semana:</label>
+      <input
+        name="PhysicalActivityHrs"
+        type="number"
+        step="0.1"
+        min="0"
+        max="40"
+        required
+      />
+
+      <label>Produtividade (0 a 10):</label>
+      <input
+        name="ProductivityScore"
+        type="number"
+        step="0.1"
+        min="0"
+        max="10"
+        required
+      />
+
+      <label>Horas de sono por noite:</label>
+      <input
+        name="SleepHours"
+        type="number"
+        step="0.1"
+        min="0"
+        max="12"
+        required
+      />
+
+      <label>Nível de estresse (0 a 10):</label>
+      <input
+        name="StressLevel"
+        type="number"
+        step="0.1"
+        min="0"
+        max="10"
+        required
+      />
+
+      <button type="submit">🔍 Prever Risco</button>
+    </form>
+    <div id="spinner" style="display: none">⏳ Carregando...</div>
+    <h2 id="result"></h2>
+
+    <script>
+      const form = document.getElementById("form");
+      const spinner = document.getElementById("spinner");
+      const resultElement = document.getElementById("result");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        resultElement.innerText = "";
+        spinner.style.display = "block";
+
+        const formData = new FormData(form);
+        const json = {};
+        formData.forEach((value, key) => (json[key] = parseFloat(value)));
+
+        try {
+          const response = await fetch("http://127.0.0.1:5000/predict", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(json),
+          });
+
+          const result = await response.json();
+          spinner.style.display = "none";
+
+          if (result.error) {
+            resultElement.innerText = "❌ Erro: " + result.error;
+            resultElement.style.color = "red";
+          } else {
+            resultElement.innerText = "✅ Resultado: " + result.label;
+            resultElement.style.color = "green";
+          }
+        } catch (error) {
+          spinner.style.display = "none";
+          resultElement.innerText = "❌ Erro de conexão com o servidor.";
+          resultElement.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>
