@@ -127,8 +127,6 @@ Exemplo de payload JSON aceito pela API:
 }
 
 ## 🛡️ Considerações de Segurança
-Os dados são anônimos e públicos (fonte: Kaggle)
-
-Nenhuma informação sensível é armazenada
-
-O projeto pode ser estendido com autenticação e anonimização, conforme visto na disciplina de Desenvolvimento de Software Seguro
+- Os dados são anônimos e públicos (fonte: Kaggle)
+- Nenhuma informação sensível é armazenada
+- O projeto pode ser estendido com autenticação e anonimização, conforme visto na disciplina de Desenvolvimento de Software Seguro
